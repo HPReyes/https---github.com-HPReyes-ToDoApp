@@ -1,15 +1,17 @@
 const task = document.querySelectorAll('li')
 const inputBox = document.getElementById('input-box')
 const listContainer = document.getElementById('list-container')
-const loadBtn = document.getElementById('load')
-const autoSave = document.getElementById('autosave')
+const saveBtn = document.getElementById('save')
+const addBtn = document.getElementById('add')
+const deleteBtn = document.getElementById('delete')
 let autoSaveMode=document.getElementById('autosavemode')
 
 
 function addTask(){
 
     if(inputBox.value===''){
-        alert("Debes escribir algo")
+        errorInput()
+
     }
     else {
         let li = document.createElement("li")
@@ -19,38 +21,44 @@ function addTask(){
         span.textContent="\u00d7";
         li.appendChild(span)
     }
-
     inputBox.value="";
     saveData()
-
 }
 
 listContainer.addEventListener('click', function(e){
     if(e.target.tagName === "LI"){
         e.target.classList.toggle("checked")
         saveData()
-
     }
     else if (e.target.tagName === 'SPAN'){
-        e.target.parentElement.remove();
-        saveData()
+        deleteTask(e.target.parentElement) 
     }
 }, false)
 
 function saveData(){
-    if(autoSave.checked){
-        localStorage.setItem("data",listContainer.innerHTML);
-   
-    }
-    else {
+        localStorage.setItem("data",listContainer.innerHTML)
 
-        return;
-    }
-    
 }
 
 function showTask(){
     listContainer.innerHTML = localStorage.getItem("data");
+}
+
+function deleteTask(target){
+       target.remove();
+    
+}
+
+function errorInput(){
+    addBtn.classList.toggle('error');
+    setTimeout(() => {
+        addBtn.classList.remove('error');
+
+    }, 500);
+}
+
+function deleteData(){
+    localStorage.setItem("data","");
 }
 
 

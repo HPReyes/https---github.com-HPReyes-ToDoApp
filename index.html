@@ -4,29 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-do List App | Hugo Pedraza</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
 
 </head>
 <body>
-    <div class="container">
-        
+    <main class="container">
         <div class="todo-app">
-            <input type="checkbox" id="autosave">AutoSave
-            <button id="load" onclick="showTask()">LOAD</button>
-            <!-- <button id="save" onclick="saveData()">SAVE</button> -->
-            <h2>To-Do List</h2>
+            <div class="buttons">
+                <button id="save" class="save" onclick="saveData()">SAVE</button>
+                <button id="load" class="load" onclick="showTask()">LOAD</button>
+                <button id="delete" class="delete" onclick="deleteData()">DELETE</button>
+            </div>
+            <h2 class="title">To-Do List</h2>
             <div class="row">
                 <input type="text" id="input-box" placeholder="Add your text">
-                <button onclick="addTask()" class="add">Add</button>
+                <button onclick="addTask()" class="add" id="add">Add</button>
             </div>
             <ul id="list-container">
             </ul>
-            <h4 id="autosavemode"></h4>
         </div>
             
-    </div>
+    </main>
 
     <script src="https://kit.fontawesome.com/6ce44f3791.js" crossorigin="anonymous"></script>
-    <script src="main.js"></script>
+    <script src="./assets/js/main.js"></script>
 </body>
 </html>

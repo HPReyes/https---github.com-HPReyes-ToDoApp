@@ -12,7 +12,7 @@
 .container{
     width: 100%;
     min-height: 100vh;
-    background:linear-gradient(135deg, #153677, #4e085f);
+    background:linear-gradient(135deg, #c8c8c8, #ffffff);
     padding: 10px;
 }
 
@@ -25,12 +25,14 @@
     border-radius: 10px;
 }
 
-.todo-app h2{
+.title{
     color: #002765;
     display: flex;
     align-items: center;
     margin-bottom: 20px;
     justify-content: center;
+    font-size: 2rem;
+    padding-bottom: 2rem;
 }
 
 .row{
@@ -118,33 +120,91 @@ ul li span:hover{
     color:white;
 }
 
-#save{
-    position: relative;
+.buttons{
+    display: flex;
+    padding-bottom: 2rem;
+}
+
+.save{
     border:none;
     width: 50px;
     height: 50px;
     outline: none;   
-    left:80%;
-    top: 0;
-    background-color: #19ce3d;
+    background-color: #00ca4e;
     color:white;
     cursor: pointer;
     border-radius: 40px;
     text-align: center;
 }
 
-#load{
-    position: relative;
+.save:hover{  
+    background-color: #06ff65;
+    transform: scale(1.1);
+}
+
+.load{
     border:none;
     width: 50px;
     height: 50px;
     outline: none;   
-    left:80%;
-    top: 0;
-    background-color: #359ad4;
+    background-color: #ffbd44;
     color:white;
     cursor: pointer;
     border-radius: 40px;
     text-align: center;
 }
+
+.load:hover{
+    background-color: #f6ca79;
+    transform: scale(1.1);
+}
+
+.delete{
+    border:none;
+    width: 50px;
+    height: 50px;
+    outline: none;   
+    background-color: #ff605c;
+    color:white;
+    cursor: pointer;
+    border-radius: 40px;
+    text-align: center;
+}
+
+.delete:hover{
+    background-color: #ff7f7c;
+    transform: scale(1.1);
+}
+
+button.error {
+    animation: shake .6s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+@keyframes shake {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+      background-color: red;
+    }
+    
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+      background-color: red;
+    }
+  
+    30%, 50%, 70% {
+      transform: translate3d(-4px, 0, 0);
+      background-color: red;
+    }
+  
+    40%, 60% {
+      transform: translate3d(4px, 0, 0);
+      background-color: red;
+    }
+  }
+
+
+
 
