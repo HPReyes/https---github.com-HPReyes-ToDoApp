@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do List App | Hugo Pedraza</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="container">
+        
+        <div class="todo-app">
+            <input type="checkbox" id="autosave">AutoSave
+            <button id="load" onclick="showTask()">LOAD</button>
+            <!-- <button id="save" onclick="saveData()">SAVE</button> -->
+            <h2>To-Do List</h2>
+            <div class="row">
+                <input type="text" id="input-box" placeholder="Add your text">
+                <button onclick="addTask()" class="add">Add</button>
+            </div>
+            <ul id="list-container">
+            </ul>
+            <h4 id="autosavemode"></h4>
+        </div>
+            
+    </div>
+
+    <script src="https://kit.fontawesome.com/6ce44f3791.js" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+</body>
+</html>
