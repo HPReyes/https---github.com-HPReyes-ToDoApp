@@ -190,6 +190,47 @@ button.error {
     perspective: 1000px;
   }
 
+
+.msg{
+    display: flex;
+    text-align: center;
+    text-transform: uppercase;
+    font-style: italic;
+    font-size: 0.8rem;
+    height: 3rem;
+    width: fit-content;
+    padding: 0 1rem;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 0;
+}
+
+.msg.deleteMsg{
+    background-color: rgba(255, 0, 0, 0.5);
+    color:white;
+    animation: showMsg 3s linear forwards;
+}
+
+.msg.successMsg{
+    background-color: rgba(10, 204, 0,0.5);
+    color:white;
+    animation: showMsg 3s linear forwards;
+}
+
+.msg.loadMsg{
+    background-color: rgba(54, 54, 54, 0.69);
+    color:white;
+    animation: showMsg 3s linear forwards;
+}
+
+@keyframes showMsg{
+    0%,100% { opacity: 0 }
+    50% { opacity: 1 }
+}
+
+
+
   /* -------------ANIMATION-------------*/
 
 @keyframes shake {
@@ -213,6 +254,7 @@ button.error {
       background-color: red;
     }
   }
+
 
 /* -------------TOOLTIP-------------*/
 

@@ -5,7 +5,7 @@ const saveBtn = document.getElementById('save')
 const addBtn = document.getElementById('add')
 const deleteBtn = document.getElementById('delete')
 let autoSaveMode=document.getElementById('autosavemode')
-let alerta = document.getElementById('alerta')
+let msg = document.getElementById('msg')
 
 function addTask(){
 
@@ -22,13 +22,13 @@ function addTask(){
         li.appendChild(span)
     }
     inputBox.value="";
-    saveData()
+
 }
 
 listContainer.addEventListener('click', function(e){
     if(e.target.tagName === "LI"){
         e.target.classList.toggle("checked")
-        saveData()
+
     }
     else if (e.target.tagName === 'SPAN'){
         deleteTask(e.target.parentElement) 
@@ -44,18 +44,27 @@ inputBox.addEventListener("keypress", function(e) {
 
 function saveData(){
         localStorage.setItem("data",listContainer.innerHTML)
-        alerta.textContent="Memory saved successfully"
+        msg.textContent="Memory saved successfully"
+        msg.classList.add('successMsg')
+        setTimeout(() => {
+            msg.classList.remove('successMsg')
+            msg.textContent=""
+          }, 3000);
 
 }
 
 function showTask(){
     listContainer.innerHTML = localStorage.getItem("data");
-    alerta.textContent="Memory loaded successfully"
+    msg.textContent="Memory loaded successfully"
+    msg.classList.add('loadMsg')
+    setTimeout(() => {
+        msg.classList.remove('loadMsg')
+        msg.textContent=""
+      }, 3000);
 }
 
 function deleteTask(target){
        target.remove();
-    
 }
 
 function errorInput(){
@@ -68,7 +77,13 @@ function errorInput(){
 
 function deleteData(){
     localStorage.setItem("data","");
-    alerta.textContent="Memory deleted successfully"
+    msg.classList.add('deleteMsg')
+    msg.textContent="Memory deleted successfully"
+    setTimeout(() => {
+        msg.classList.remove('deleteMsg')
+        msg.textContent=""
+      }, 3000);
+    
 }
 
 
