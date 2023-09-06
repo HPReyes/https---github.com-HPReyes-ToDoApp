@@ -6,15 +6,23 @@
     <title>To-do List App | Hugo Pedraza</title>
     <link rel="stylesheet" href="/assets/css/style.css">
 
+
+
 </head>
 <body>
+
+
     <main class="container">
         <div class="todo-app">
             <div class="buttons">
-                <button id="save" class="save" onclick="saveData()">SAVE</button>
-                <button id="load" class="load" onclick="showTask()">LOAD</button>
-                <button id="delete" class="delete" onclick="deleteData()">DELETE</button>
+                
+                <button id="save" class="save btn tooltip close" data-dismiss="alert" onclick="saveData()"><i class="fa-solid fa-floppy-disk"></i><span class="tooltiptext">Save your tasks</span></button>
+                <button id="load" class="load btn tooltip" onclick="showTask()"><i class="fa-regular fa-folder-open"></i><span class="tooltiptext">Load your tasks</span></button>
+                <button id="delete" class="delete btn tooltip" onclick="deleteData()"><i class="fa-solid fa-trash"></i><span class="tooltiptext">Delete your saved tasks</span></button>
+
             </div>
+
+
             <h2 class="title">To-Do List</h2>
             <div class="row">
                 <input type="text" id="input-box" placeholder="Add your text">
@@ -22,11 +30,15 @@
             </div>
             <ul id="list-container">
             </ul>
+            <div class="alerta" id="alerta"></div>
         </div>
-            
+        
+
     </main>
 
     <script src="https://kit.fontawesome.com/6ce44f3791.js" crossorigin="anonymous"></script>
     <script src="./assets/js/main.js"></script>
+
+
 </body>
 </html>

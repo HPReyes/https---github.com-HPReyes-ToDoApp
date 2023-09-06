@@ -5,7 +5,7 @@ const saveBtn = document.getElementById('save')
 const addBtn = document.getElementById('add')
 const deleteBtn = document.getElementById('delete')
 let autoSaveMode=document.getElementById('autosavemode')
-
+let alerta = document.getElementById('alerta')
 
 function addTask(){
 
@@ -35,13 +35,22 @@ listContainer.addEventListener('click', function(e){
     }
 }, false)
 
+inputBox.addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      addTask();
+    }
+  });
+
 function saveData(){
         localStorage.setItem("data",listContainer.innerHTML)
+        alerta.textContent="Memory saved successfully"
 
 }
 
 function showTask(){
     listContainer.innerHTML = localStorage.getItem("data");
+    alerta.textContent="Memory loaded successfully"
 }
 
 function deleteTask(target){
@@ -59,8 +68,7 @@ function errorInput(){
 
 function deleteData(){
     localStorage.setItem("data","");
+    alerta.textContent="Memory deleted successfully"
 }
-
-
 
 
