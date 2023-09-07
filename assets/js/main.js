@@ -42,6 +42,17 @@ inputBox.addEventListener("keypress", function(e) {
     }
   });
 
+  function deleteData(){
+    // localStorage.setItem("data","");
+    msg.classList.add('deleteMsg')
+    msg.textContent="Tasks deleted successfully"
+    setTimeout(() => {
+        msg.classList.remove('deleteMsg')
+        msg.textContent=""
+      }, 3000);
+    listContainer.textContent="";
+}
+
 function saveData(){
         localStorage.setItem("data",listContainer.innerHTML)
         msg.textContent="Memory saved successfully"
@@ -75,15 +86,6 @@ function errorInput(){
     }, 500);
 }
 
-function deleteData(){
-    localStorage.setItem("data","");
-    msg.classList.add('deleteMsg')
-    msg.textContent="Memory deleted successfully"
-    setTimeout(() => {
-        msg.classList.remove('deleteMsg')
-        msg.textContent=""
-      }, 3000);
-    
-}
+
 
 

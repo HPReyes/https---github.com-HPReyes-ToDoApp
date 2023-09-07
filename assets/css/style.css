@@ -75,6 +75,10 @@ button.add{
     text-align: center;
 }
 
+button.add:active{
+    transform: scale(0.9);
+}
+
 ul li{
     list-style-type: none;
     font-size: 17px;
@@ -153,35 +157,12 @@ ul li span:hover{
 .btn:hover{
     font-size: 1rem;
     background-color: #376cc3;
-    transform: scale(1.3);
+    transform: scale(1.2);
 }
 
-/* .save{
-    background-color: #00ca4e;
+.btn:active{
+    transform: scale(0.9);
 }
-
-.save:hover{  
-    background-color: #06ff65;
-    transform: scale(1.1);
-}
-
-.load{
-    background-color: #ffbd44;
-}
-
-.load:hover{
-    background-color: #f6ca79;
-    transform: scale(1.1);
-}
-
-.delete{
-    background-color: #ff605c;
-}
-
-.delete:hover{
-    background-color: #ff7f7c;
-    transform: scale(1.1);
-} */
 
 button.error {
     animation: shake .6s cubic-bezier(.36,.07,.19,.97) both;
@@ -316,17 +297,14 @@ button.error {
         flex: 0;
         margin: 0 auto;
     }
-
 }
 
-@media (width < 360px){
+@media screen and (width < 399px){
 
     .row{
         overflow: hidden;
         height: 2.5rem;
         text-align: center;
-        
-
     }
 
     button.add{
@@ -334,12 +312,8 @@ button.error {
         height: 2.5rem;
         width: 3rem;
         font-size: 0.8rem;
-        margin-left: 65%;
+        margin-left: 70%;
         padding: 0;
-        
-
-        
-
     }
 
     #input-box {
@@ -351,5 +325,4 @@ button.error {
     ul li{
         font-size:0.8rem;
     }
-
 }
