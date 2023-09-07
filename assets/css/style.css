@@ -224,13 +224,6 @@ button.error {
     animation: showMsg 3s linear forwards;
 }
 
-@keyframes showMsg{
-    0%,100% { opacity: 0 }
-    50% { opacity: 1 }
-}
-
-
-
   /* -------------ANIMATION-------------*/
 
 @keyframes shake {
@@ -254,7 +247,11 @@ button.error {
       background-color: red;
     }
   }
-
+  
+  @keyframes showMsg{
+    0%,100% { opacity: 0 }
+    50% { opacity: 1 }
+}
 
 /* -------------TOOLTIP-------------*/
 
@@ -301,7 +298,7 @@ button.error {
 
   /* -------------MEDIA QUERIES-------------*/
 
-@media (width< 400px){
+@media (width < 400px){
 
     .row{
         overflow:hidden;
@@ -317,6 +314,36 @@ button.error {
 
     #input-box {
         flex: 0;
+        margin: 0 auto;
+    }
+
+}
+
+@media (width < 360px){
+
+    .row{
+        display: grid;
+        padding: 0;
+        height: 2rem;
+
+    }
+
+    button.add{
+        position: absolute;
+        height: 2rem;
+        width: 3rem;
+        left: 80%;
+        font-size: 0.8rem;
+        margin: 0 auto;
+        padding: 0;
+
+        
+
+    }
+
+    #input-box {
+        height: 2rem;
+
         margin: 0 auto;
     }
 
