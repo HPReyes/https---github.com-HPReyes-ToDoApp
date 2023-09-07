@@ -322,20 +322,21 @@ button.error {
 @media (width < 360px){
 
     .row{
-        display: grid;
-        padding: 0;
-        height: 2rem;
+        overflow: hidden;
+        height: 2.5rem;
+        text-align: center;
+        
 
     }
 
     button.add{
         position: absolute;
-        height: 2rem;
+        height: 2.5rem;
         width: 3rem;
-        left: 80%;
         font-size: 0.8rem;
-        margin: 0 auto;
+        margin-left: 65%;
         padding: 0;
+        
 
         
 
@@ -343,8 +344,12 @@ button.error {
 
     #input-box {
         height: 2rem;
+        padding: 0;
+        margin-left: 20px;
+    }
 
-        margin: 0 auto;
+    ul li{
+        font-size:0.8rem;
     }
 
 }
